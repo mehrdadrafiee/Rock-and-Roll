@@ -1,9 +1,17 @@
-<div class="row list-wrapper">
-  <small>app/templates/bands.hbs</small>
-  <ul class="list-group">
-  {{#each model as |band|}}
-    <li class="list-group-item">{{band.name}}
-    </li>
+<div class="col-sm-4 col-md-4">
+<small>app/templates/bands.hbs</small>
+  <div class="list-group">
+  {{#each model.sortedContent as |band|}}
+    {{#link-to "bands.band.songs" band class="list-group-item
+band-link"}}
+      {{band.name}}
+      <span class="pointer glyphicon glyphicon-chevron-right"></span>
+    {{/link-to}}
   {{/each}}
-  </ul>
+  </div>
+</div>
+<div class="col-sm-8 col-md-8">
+  <div class="list-group">
+    {{outlet}}
+  </div>
 </div>
