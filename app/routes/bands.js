@@ -41,7 +41,7 @@ var pretender = Song.create({
 
 var BandsCollection = Ember.Object.extend({
   content: [],
-  sortProperties:['name:desc'],
+  sortProperties: ['name:desc'],
   sortedContent: Ember.computed.sort('content', 'sortProperties')
 });
 
@@ -64,11 +64,7 @@ var fooFighters = Band.create({
 var bands = BandsCollection.create();
 bands.get('content').pushObjects([ledZeppelin, pearlJam, fooFighters]);
 
-// var ledZeppelin = Band.create({ name: 'Led Zeppelin' });
-// var pearlJam = Band.create({ name: 'Pearl Jam' });
-// var fooFighters = Band.create({ name: 'Foo Fighers' });
-
-// var bands = [ledZeppelin, pearlJam, fooFighters];
+console.log("Route: app/routes/bands.js", bands.get('content')[1].songs);
 
 export default Ember.Route.extend({
   model: function() {
