@@ -41,7 +41,8 @@ var ledZeppelin = Band.create({
 
 var pearlJam = Band.create({
   name: 'Pearl Jam',
-  songs: [daughter, yellowLedbetter]
+  songs: [daughter, yellowLedbetter],
+  description: 'Pearl Jam is an American rock band, formed in Seattle, Washington in 1990.'
 });
 
 var fooFighters = Band.create({
@@ -66,6 +67,9 @@ export default Ember.Route.extend({
       bands.get('content').pushObject(band);
       this.get('controller').set('name', '');
       this.transitionTo('bands.band.songs', band);
+    },
+    didTransition: function() {
+      document.title = 'Bands - Rock & Roll';
     }
   }
 });

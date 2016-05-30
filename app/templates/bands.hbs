@@ -1,5 +1,4 @@
 <div class="col-sm-4 col-md-4">
-<small>app/templates/bands.hbs</small>
   <div class="list-group">
     <div class="list-group-item">
       <form {{action "createBand" on="submit"}}>
@@ -9,8 +8,7 @@
       </form>
     </div>
     {{#each model.sortedContent as |band|}}
-      {{#link-to "bands.band.songs" band class="list-group-item
-  band-link"}}
+      {{#link-to "bands.band" band class="list-group-item band-link"}}
         {{band.name}}
         <span class="pointer glyphicon glyphicon-chevron-right"></span>
       {{/link-to}}
