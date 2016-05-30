@@ -2,20 +2,6 @@ import Ember from 'ember';
 import Band from '../models/band';
 import Song from '../models/song';
 
-// var Band = Ember.Object.extend({
-//   name: '',
-
-//   slug: Ember.computed('name', function() {
-//     return this.get('name').dasherize();
-//   })
-// });
-
-// var Song = Ember.Object.extend({
-//   title: '',
-//   rating: 0,
-//   band: ''
-// });
-
 // All Songs
 var blackDog = Song.create({
   title: 'Black Dog',
@@ -79,6 +65,7 @@ export default Ember.Route.extend({
       var band = Band.create({ name: name });
       bands.get('content').pushObject(band);
       this.get('controller').set('name', '');
+      this.transitionTo('bands.band.songs', band);
     }
   }
 });
