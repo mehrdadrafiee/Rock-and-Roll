@@ -2,11 +2,16 @@
   <div class="page-header">
     <h1>Rock&amp;Roll<small>&nbsp;with Ember.js</small></h1>
   </div>
+  <div class="row">
+    <div class="col-md-6">
+      <ul class="list-group">
+        {{#each songs.sortedContent as |song|}}
+          <li class="list-group-item">{{song.title}} by <em>{{song.band}}</em>
+            <span class="rating badge pull-right">{{song.rating}}</span>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
   {{outlet}}
 </div>
-
-<ul>
-  {{#each songs.sortedContent as |song|}}
-    <li>{{song.title}} by {{song.band}} ({{song.rating}})</li>
-  {{/each}}
-</ul>
