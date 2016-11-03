@@ -1,7 +1,7 @@
 {
   "name": "rock-and-roll",
-  "version": "0.0.0",
-  "description": "Small description for rock-and-roll goes here",
+  "version": "1.0.0",
+  "description": "Rock & Roll with EmberJS",
   "private": true,
   "directories": {
     "doc": "doc",
@@ -12,11 +12,14 @@
     "start": "ember server",
     "test": "ember test"
   },
-  "repository": "",
+  "repository": {
+    "url": "https://github.com/mehrdadrafiee/Rock-and-Roll.git",
+    "type": "git"
+  },
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "Mehrdad Rafiee <rafiee.mehrdad@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.2",
@@ -37,5 +40,6 @@
     "ember-load-initializers": "^0.5.1",
     "ember-resolver": "^2.0.3",
     "loader.js": "^4.0.1"
-  }
+  },
+  "main": "index.js"
 }
