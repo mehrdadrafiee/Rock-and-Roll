@@ -1,6 +1,5 @@
 import Ember from 'ember';
 
-///////BAND STARTS///////
 var Band = Ember.Object.extend({
   name: '',
 
@@ -9,39 +8,6 @@ var Band = Ember.Object.extend({
   })
 });
 
-var BandsCollection = Ember.Object.extend({
-  content: [],
-  sortProperties: ['name:desc'],
-  sortedContent: Ember.computed.sort('content', 'sortProperties')
-});
-
-var ledZeppelin = Band.create({
-  name: 'Led Zeppelin',
-  songs: [blackDog]
-});
-
-var pearlJam = Band.create({
-  name: 'Pearl Jam',
-  songs: [daughter, yellowLedbetter]
-});
-
-var fooFighters = Band.create({
-  name: 'Foo Fighters',
-  songs: [pretender]
-});
-
-var kayaProject = Band.create({
-  name: 'Kaya Project',
-  songs: [alwaysWaiting]
-});
-
-var bands = BandsCollection.create();
-bands.get('content').pushObjects([ ledZeppelin, pearlJam, fooFighters, kayaProject ]);
-///////BAND ENDS///////
-
-
-
-///////SONG STARTS///////
 var Song = Ember.Object.extend({
   title: '',
   band: '',
@@ -77,7 +43,35 @@ var alwaysWaiting = Song.create({
   band: 'Kaya Project',
   rating: 5
 });
-///////SONG ENDS///////
+
+var ledZeppelin = Band.create({
+  name: 'Led Zeppelin',
+  songs: [blackDog]
+});
+
+var pearlJam = Band.create({
+  name: 'Pearl Jam',
+  songs: [daughter, yellowLedbetter]
+});
+
+var fooFighters = Band.create({
+  name: 'Foo Fighters',
+  songs: [pretender]
+});
+
+var kayaProject = Band.create({
+  name: 'Kaya Project',
+  songs: [alwaysWaiting]
+});
+
+var BandsCollection = Ember.Object.extend({
+  content: [],
+  sortProperties: ['name:desc'],
+  sortedContent: Ember.computed.sort('content', 'sortProperties')
+});
+
+var bands = BandsCollection.create();
+bands.get('content').pushObjects([ ledZeppelin, pearlJam, fooFighters, kayaProject ]);
 
 export default Ember.Route.extend({
   model() {
